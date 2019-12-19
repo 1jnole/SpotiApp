@@ -1,4 +1,4 @@
-<div style="background: #ECECEC;padding:30px;">
+<div>
   <div nz-row [nzGutter]="8">
     <div *ngFor="let track of newTracks" class="card-track" nz-col [nzSpan]="8">
       <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
@@ -15,3 +15,8 @@
     </div>
   </div>
 </div>
+
+<div class="spinner" *ngIf="loadingItem">
+  <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+</div>
+

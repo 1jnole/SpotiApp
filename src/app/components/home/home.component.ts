@@ -11,16 +11,20 @@ import {Track} from '../../interfaces/track';
 export class HomeComponent implements OnInit {
 
   newTracks: Track[] = [];
+  loadingItem: boolean;
 
-  constructor(private spotify: SpotifyService) {
-    this.spotify.getNewReleases().subscribe((response: any) => {
-      this.newTracks = response.albums.items;
-      console.log(response);
-    });
-  }
+  constructor(private spotify: SpotifyService) {}
 
   ngOnInit() {
-
+    this.loadingItem = true;
+    this.spotify.getNewReleases().subscribe((response: any) => {
+      this.newTracks = response.albums.items;
+      this.loadingItem = false;
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+      this.loadingItem = true;
+    });
   }
 
 }
