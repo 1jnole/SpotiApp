@@ -1,8 +1,10 @@
-<nz-header>
-  <div class="logo"></div>
-  <ul nz-menu nzTheme="dark" nzMode="horizontal">
-    <li nz-menu-item>nav 1</li>
-    <li nz-menu-item>nav 2</li>
-    <li nz-menu-item>nav 3</li>
+ <div class="logo"><img src="../../../../assets/img/iconfinder_spotify.png" alt=""></div>
+  <ul class="navBarLinks" nz-menu nzTheme="dark" nzMode="horizontal">
+    <li routerLinkActive="active" nz-menu-item>
+      <a [routerLink]="['/home']">Home</a>
+    </li>
+    <li routerLinkActive="active" nz-menu-item>
+      <a [routerLink]="['/search']">Search</a>
+    </li>
   </ul>
-</nz-header>
+
