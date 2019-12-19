@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+<div style="background: #ECECEC;padding:30px;">
+  <div nz-row [nzGutter]="8">
+    <div *ngFor="let track of newTracks" class="card-track" nz-col [nzSpan]="8">
+      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+        <nz-card-meta nzTitle="{{track.name}}" [nzDescription]="authors"></nz-card-meta>
+      </nz-card>
+      <ng-template #coverTemplate>
+        <img alt="example" [src]="track.images[0].url"/>
+      </ng-template>
+      <ng-template #authors>
+        <div *ngFor="let artist of track.artists">
+          <nz-badge nzColor="gold" nzText="{{artist.name}}"></nz-badge>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

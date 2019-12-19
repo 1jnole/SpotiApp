@@ -15,6 +15,7 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {BreadcrumbComponent} from './components/shared/breadcrumb/breadcrumb.component';
 import {FooterComponent} from './components/shared/footer/footer.component';
 import { IconDefinition } from '@ant-design/icons-angular';
+import { HttpClientModule} from '@angular/common/http';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -36,7 +37,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   imports: [
     BrowserModule,
     NgZorroAntdModule,
-    RouterModule.forRoot(ROUTES, {useHash: false})
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [{provide: NZ_ICONS, useValue: icons}],
   bootstrap: [AppComponent]
