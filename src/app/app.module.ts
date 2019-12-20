@@ -18,6 +18,7 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import { HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';;
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { CardsComponent } from './components/cards/cards.component';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -35,7 +36,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     LayoutComponent,
     BreadcrumbComponent,
     FooterComponent,
-    NoImagePipe
+    NoImagePipe,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

@@ -11,22 +11,10 @@
   </div>
 </div>
 
-<div>
-  <div nz-row [nzGutter]="8">
-    <div *ngFor="let artist of artists" class="card-track" nz-col [nzSpan]="8">
-      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
-        <nz-card-meta nzTitle="{{artist.name}}" [nzDescription]="authors"></nz-card-meta>
-      </nz-card>
-      <ng-template #coverTemplate>
-        <img alt="example" [src]="artist.images | noImage"/>
-      </ng-template>
-    </div>
-  </div>
-</div>
+<app-cards [items]="artists"></app-cards>
 
-<div class="spinner" *ngIf="loadingItem">
-  <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
-</div>
+
+
 
 
 
