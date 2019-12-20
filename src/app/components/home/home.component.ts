@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.loadingItem = true;
     this.spotify.getNewReleases().subscribe((response: any) => {
-      this.newTracks = response.albums.items;
+      this.newTracks = response;
       this.loadingItem = false;
       console.log(response);
     }, (error) => {
