@@ -18,7 +18,7 @@
         <nz-card-meta nzTitle="{{artist.name}}" [nzDescription]="authors"></nz-card-meta>
       </nz-card>
       <ng-template #coverTemplate>
-        <img alt="example" [src]="artist.images[0].url"/>
+        <img alt="example" [src]="artist.images | noImage"/>
       </ng-template>
     </div>
   </div>

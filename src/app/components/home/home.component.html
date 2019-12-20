@@ -5,7 +5,7 @@
         <nz-card-meta nzTitle="{{track.name}}" [nzDescription]="authors"></nz-card-meta>
       </nz-card>
       <ng-template #coverTemplate>
-        <img alt="example" [src]="track.images[0].url"/>
+        <img alt="example" [src]="track.images | noImage"/>
       </ng-template>
       <ng-template #authors>
         <div *ngFor="let artist of track.artists">
