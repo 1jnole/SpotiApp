@@ -5,12 +5,13 @@ import {Routes} from '@angular/router';
 import {LayoutComponent} from './components/layout/layout.component';
 
 export const ROUTES: Routes = [
-  {path: '', redirectTo: 'search', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: '', component: LayoutComponent, children: [
+      {path: 'home', component: HomeComponent},
       {path: 'search', component: SearchComponent},
-      {path: 'home', component: HomeComponent}
+      {path: 'artist/:id', component: ArtistComponent},
     ]
   },
-  {path: '**', pathMatch: 'full', redirectTo: 'search'}
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];

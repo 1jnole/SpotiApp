@@ -1,6 +1,6 @@
 <div>
   <div nz-row [nzGutter]="8">
-    <div *ngFor="let item of items" class="card-track" nz-col [nzSpan]="8">
+    <div *ngFor="let item of items" (click)="artistDetail(item)" class="card-track" nz-col [nzSpan]="8">
       <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
         <nz-card-meta nzTitle="{{item.name}}" [nzDescription]="authors"></nz-card-meta>
       </nz-card>
@@ -15,8 +15,3 @@
     </div>
   </div>
 </div>
-
-<div class="spinner" *ngIf="loadingItem">
-  <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
-</div>
-
