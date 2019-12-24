@@ -20,6 +20,7 @@ import {FormsModule} from '@angular/forms';;
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomSanitizerPipe } from './pipes/dom-sanitizer.pipe';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -39,7 +40,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     FooterComponent,
     NoImagePipe,
     CardsComponent,
-    LoadingComponent
+    LoadingComponent,
+    DomSanitizerPipe
   ],
   imports: [
     BrowserModule,

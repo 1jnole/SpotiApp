@@ -1,7 +1,7 @@
 <app-loading *ngIf="loadingArtist"></app-loading>
 
 <div *ngIf="!loadingArtist" class="container-fluid">
-  <div  class="row">
+  <div class="row">
     <div class="col-2">
       <img [src]="artist.images | noImage" alt="">
     </div>
@@ -16,4 +16,35 @@
     </div>
   </div>
 
+  <div style="padding: 4em;">
+    <nz-table #filterTable [nzData]="topTracks">
+      <thead>
+      <tr>
+        <th>
+        </th>
+        <th>
+          Album
+        </th>
+        <th>
+          Track
+        </th>
+        <th>
+          Preview
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of filterTable.data">
+        <td><img [src]="data.album.images | noImage" alt=""></td>
+        <td>{{ data.album.name }}</td>
+        <td>{{ data.name }}</td>
+        <td>
+          <iframe [src]="data.uri | domSanitizer: 'https://open.spotify.com/embed/?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
 </div>
+
+

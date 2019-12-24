@@ -1,0 +1,5 @@
+div .ant-card-body{
+  height: 150px !important;
+  overflow: auto;
+  border: 1px solid red;
+}

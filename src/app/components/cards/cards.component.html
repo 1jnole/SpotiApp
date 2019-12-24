@@ -1,7 +1,7 @@
-<div>
-  <div nz-row [nzGutter]="8">
-    <div *ngFor="let item of items" (click)="artistDetail(item)" class="card-track" nz-col [nzSpan]="8">
-      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+<div nz-row>
+  <div>
+    <div *ngFor="let item of items" (click)="artistDetail(item)" class="card-track" style="padding: 2em" nz-col [nzSpan]="6" >
+      <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate" [nzBodyStyle]="{'height': '150px'}">
         <nz-card-meta nzTitle="{{item.name}}" [nzDescription]="authors"></nz-card-meta>
       </nz-card>
       <ng-template #coverTemplate>
