@@ -1,2 +1,4 @@
 <app-loading *ngIf="loadingItem"></app-loading>
+<nz-alert *ngIf="error" style="padding: 4em" nzType="error" nzMessage="Error" nzDescription="Invalid access token" nzShowIcon>
+</nz-alert>
 <app-cards [items]="newTracks"></app-cards>

@@ -21,6 +21,7 @@ import { NoImagePipe } from './pipes/no-image.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { DomSanitizerPipe } from './pipes/dom-sanitizer.pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -48,7 +49,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NgZorroAntdModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [{provide: NZ_ICONS, useValue: icons}],
   bootstrap: [AppComponent]
